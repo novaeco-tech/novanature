@@ -33,14 +33,14 @@ graph TD
     UI -->|REST| API[NovaNature API]
     
     subgraph "The Sensing Layer"
-        API -->|Fetch Stream| Infra[NovaInfra (Sensors)]
-        API -->|Fetch Sat Data| Sentinel[ESA/NASA API]
+        API -->|Fetch Stream| Infra["NovaInfra (Sensors)"]
+        API -->|Fetch Sat Data| Sentinel["ESA/NASA API"]
     end
 
     subgraph "The Analysis Layer"
         Infra -->|Audio Stream| Worker[Worker-Bioacoustics]
         Worker -->|Species List| API
-        API -->|Tree Count| Mind[NovaMind (Computer Vision)]
+        API -->|Tree Count| Mind["NovaMind (Computer Vision)"]
     end
 
     subgraph "The Value Layer"
